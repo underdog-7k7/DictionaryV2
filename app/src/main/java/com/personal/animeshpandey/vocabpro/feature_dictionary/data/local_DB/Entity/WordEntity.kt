@@ -7,7 +7,7 @@ import com.personal.animeshpandey.vocabpro.feature_dictionary.domain.model.WordM
 
 @Entity
 data class WordEntity(
-    @PrimaryKey val ID:Int,
+    @PrimaryKey val ID:Int? = null,
     val word:String, //this is the name of the word, wordModel is the entire word object
     val phonetic:String,
     val origin:String,

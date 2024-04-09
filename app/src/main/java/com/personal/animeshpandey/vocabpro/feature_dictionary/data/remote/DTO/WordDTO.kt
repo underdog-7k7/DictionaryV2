@@ -1,5 +1,6 @@
 package com.personal.animeshpandey.vocabpro.feature_dictionary.data.remote.DTO
 
+import com.personal.animeshpandey.vocabpro.feature_dictionary.data.local_DB.Entity.WordEntity
 import com.personal.animeshpandey.vocabpro.feature_dictionary.domain.model.WordModel
 
 data class WordInfoDto(
@@ -14,6 +15,15 @@ data class WordInfoDto(
         //only DTO's interact with DTO's
 
         return WordModel(
+            meanings = meanings.map{it.toMeaningModel()},
+            origin = origin,
+            phonetic = phonetic,
+            word = word
+        )
+    }
+
+    fun toWordEntity():WordEntity{
+        return WordEntity(
             meanings = meanings.map{it.toMeaningModel()},
             origin = origin,
             phonetic = phonetic,
