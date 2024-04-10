@@ -1,5 +1,9 @@
 package com.personal.animeshpandey.vocabpro.feature_dictionary.data.remote
 
+import com.personal.animeshpandey.vocabpro.feature_dictionary.data.remote.DTO.WordInfoDto
+import retrofit2.http.GET
+import retrofit2.http.Path
+
 interface DictionaryApi {
 
     @GET("/api/v2/entries/en/{word}")
